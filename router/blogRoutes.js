@@ -38,7 +38,7 @@ router.put('/edit/:id', async (req, res) => {
         const data = new blogModel(req.body);
         const resData = await blogModel.findByIdAndUpdate(id,req.body)
         
-        res.status(200).send(resData);
+        res.status(200).send('Update Successful');
     }catch(err){
         res.status(404).send("Error in updating data");
     }
@@ -50,7 +50,7 @@ router.delete('/delete/:id', async (req, res) => {
         const id = req.params.id;
         const resData = await blogModel.findByIdAndDelete(id);
         
-        res.status(200).send(resData);
+        res.status(200).send('deleted successfully');
     }catch(err){
         res.status(404).send("Error in deletion");
     }
